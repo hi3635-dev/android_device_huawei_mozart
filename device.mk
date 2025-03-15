@@ -37,6 +37,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     bt_vendor.conf
 
+# Debug
+ifeq ($(ENABLE_DEBUG),true)
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.adb.secure=0 \
+    ro.secure=0
+
+PRODUCT_PACKAGES += \
+    dlopen32 \
+    dlopen64 \
+    sh
+endif
+
 # Default properties
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.enable_boot_charger_mode=0 \
