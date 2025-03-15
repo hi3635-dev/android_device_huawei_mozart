@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product-if-exists, vendor/huawei/grace/grace-vendor.mk)
+$(call inherit-product-if-exists, vendor/huawei/mozart/mozart-vendor.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
