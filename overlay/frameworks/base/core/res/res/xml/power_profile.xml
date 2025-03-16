@@ -20,21 +20,19 @@
 <device name="Android">
   <!-- All values are in mA except as noted -->
   <item name="none">0</item>
-  <item name="screen.on">117</item> <!-- min brite -->
+  <item name="screen.on">126</item> <!-- min brite -->
   <item name="bluetooth.active">97</item>
   <item name="bluetooth.on">0.6</item>
   <item name="bluetooth.at">0.6</item> <!-- TBD -->
-  <item name="screen.full">263</item> <!-- backlight 14 leds -->
-  <!-- DTS2016010501927  wwx312655 begin-->
+  <item name="screen.full">466</item> <!-- backlight 20 leds -->
   <item name="wifi.on">6.6</item>
-  <item name="wifi.active">25</item>
-  <item name="wifi.scan">29</item>
-  <!-- DTS2016010501927  wwx312655 end-->
+  <item name="wifi.active">128</item>
+  <item name="wifi.scan">146</item>
   <item name="dsp.audio">70</item> <!-- k3v3 -->
   <item name="dsp.video">176</item>
   <item name="radio.active">190</item>
   <item name="gps.on">70</item>
-  <item name="battery.capacity">2600</item> <!-- 2600mAh -->
+  <item name="battery.capacity">4230</item> <!-- 4000mAh -->
   <item name="radio.scanning">15</item> <!-- TBD -->
   <!-- Current consumed by the radio at different signal strengths, when paging  -->
    <array name="radio.on"> <!-- 1 entry per signal strength bin, TBD -->
