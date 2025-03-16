@@ -17,7 +17,7 @@
 DEVICE_PATH := device/huawei/mozart
 
 # Inherit vendor blobs
-$(call inherit-product-if-exists, vendor/huawei/mozart/mozart-vendor.mk)
+$(call inherit-product, vendor/huawei/mozart/mozart-vendor.mk)
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
