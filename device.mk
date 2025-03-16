@@ -150,7 +150,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_icu \
     libshim_gui \
-    libshim_log
+    libshim_log \
+    libshim_wvm
 
 # Thermal
 PRODUCT_COPY_FILES += \
