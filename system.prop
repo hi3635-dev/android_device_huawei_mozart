@@ -1,22 +1,16 @@
-# Audio DTS
-ro.config.hw_dts=true
+# Audio
+ro.config.hw_dts=false
 
-# BT
+# Bluetooth
 ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
-
-# Camera
-
 
 # CPU
 ro.hardware.alter=Hisilicon Kirin 930
 
 # Display
 ro.sf.lcd_density=320
-ro.opengles.version=196609
+ro.opengles.version=196608
 ro.config.mmu_en=1
-
-# DRM
-#drm.service.enabled=true
 
 # Media
 media.stagefright.use-awesome=false
@@ -25,12 +19,14 @@ media.stagefright.use-awesome=false
 ro.am.reschedule_service=true
 ro.config.enable_rcc=true
 
-# SDcardFS
+# SDCard
 ro.sys.sdcardfs=true
 
-# Sensor
+# Sensors
 ro.config.hw_sensorhub=true
 
-# WiFi
-wifi.interface=wlan0
+# USB
 persist.sys.usb.config.extra=none
+
+# Wifi
+wifi.interface=wlan0

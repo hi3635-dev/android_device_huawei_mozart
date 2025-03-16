@@ -14,7 +14,15 @@
 # limitations under the License.
 #
 
+DEVICE_PATH := device/huawei/mozart
+
+# Inherit vendor blobs
 $(call inherit-product-if-exists, vendor/huawei/mozart/mozart-vendor.mk)
+
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -30,16 +38,16 @@ PRODUCT_PACKAGES += \
     tinypcminfo
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/prebuilts/audio_policy.conf:system/etc/audio_policy.conf
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    bt_vendor.conf
+    $(DEVICE_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(DEVICE_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 # Carrier
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=wifi-only
+
+# Charger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.enable_boot_charger_mode=0
 
 # Debug
 ifeq ($(ENABLE_DEBUG),true)
@@ -53,40 +61,31 @@ PRODUCT_PACKAGES += \
     sh
 endif
 
-# Default properties
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.enable_boot_charger_mode=0 \
-    persist.sys.usb.config=manufacture,adb
-
 # GPS
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/clatd.conf:system/etc/clatd.conf \
-    $(LOCAL_PATH)/prebuilts/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml \
-    $(LOCAL_PATH)/prebuilts/gps47531config_beta.xml:system/etc/gps47531config_beta.xml
+    $(DEVICE_PATH)/configs/gps/clatd.conf:system/etc/clatd.conf \
+    $(DEVICE_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(DEVICE_PATH)/configs/gps/gps47531config.xml:system/etc/gps47531config.xml \
+    $(DEVICE_PATH)/configs/gps/gps47531config_beta.xml:system/etc/gps47531config_beta.xml
 
-# HWC Hal
-PRODUCT_PACKAGES += \
-    hwcomposer.hi3635
-
-# KEYPAD
-PRODUCT_PACKAGES += \
-    usbaudio.kl
-
-# libGLES_android
+# Graphics
 PRODUCT_PACKAGES += \
     libGLES_android
 
-# LibShim
+# Hardware
 PRODUCT_PACKAGES += \
-    libshim_icu \
-    libshim_gui
+    hwcomposer.hi3635 \
+    power.hi3635
 
-# Media configuration
+# Keylayout
+PRODUCT_PACKAGES += \
+    usbaudio.kl
+
+# Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/prebuilts/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/prebuilts/media_profiles.xml:system/etc/media_profiles.xml
+    $(DEVICE_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(DEVICE_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -95,10 +94,11 @@ PRODUCT_COPY_FILES += \
 
 # OMX Codec
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/topazhp.cfg:system/etc/topazhp.cfg
+    $(DEVICE_PATH)/configs/omx/topazhp.cfg:system/etc/topazhp.cfg
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(DEVICE_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -130,10 +130,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
-# Power Hal
-PRODUCT_PACKAGES += \
-    power.hi3635
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi3635 \
@@ -150,20 +146,22 @@ PRODUCT_PACKAGES += \
     hw_healthd \
     teecd
 
-# Screen density
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-PRODUCT_TAGS += dalvik.gc.type-precise
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_icu \
+    libshim_gui
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/thermald.xml:system/etc/thermald.xml \
-    $(LOCAL_PATH)/prebuilts/thermald_performance.xml:system/etc/thermald_performance.xml
+    $(DEVICE_PATH)/configs/thermal/thermald.xml:system/etc/thermald.xml \
+    $(DEVICE_PATH)/configs/thermal/thermald_performance.xml:system/etc/thermald_performance.xml
 
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -174,8 +172,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    $(DEVICE_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(DEVICE_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)

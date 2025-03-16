@@ -13,10 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#----------------------------------------------------------------------
-# Copy additional target-specific files
-#----------------------------------------------------------------------
-LOCAL_PATH:= $(call my-dir)
+LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := usbaudio.kl
