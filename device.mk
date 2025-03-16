@@ -159,6 +159,11 @@ PRODUCT_PACKAGES += \
     init.hi3635.usb.rc \
     ueventd.hi3635.rc
 
+PRODUCT_PACKAGES += \
+    oeminfo_nvm_server \
+    hw_healthd \
+    teecd
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
