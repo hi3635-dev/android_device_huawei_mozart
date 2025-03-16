@@ -58,11 +58,6 @@ TARGET_BOOTLOADER_BOARD_NAME := hi3635
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-# CMHW
-BOARD_HARDWARE_CLASS := \
-    $(DEVICE_PATH)/cmhw \
-    hardware/cyanogen/cmhw
-
 # CPU
 ENABLE_CPUSETS := true
 TARGET_CPU_SMP := true
