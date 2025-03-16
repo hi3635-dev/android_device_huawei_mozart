@@ -75,9 +75,6 @@ TARGET_USES_ION := true
 # Dex-PreOpt
 WITH_DEXPREOPT := true
 
-# DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchscreen/easy_wakeup_gesture"
-
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
