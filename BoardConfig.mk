@@ -146,6 +146,3 @@ WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4339_hw.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4339_apsta_hw.bin"
 WIFI_DRIVER_FW_PATH_P2P          := "/vendor/firmware/fw_bcm4339_hw.bin"
 WIFI_BAND                        := 802_11_ABG
-
-# inherit from the proprietary version
--include vendor/huawei/mozart/BoardConfigVendor.mk
