@@ -119,11 +119,6 @@ TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi3635
 
-# RIL
-TARGET_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
-BOARD_RIL_CLASS := ../../../device/huawei/mozart/ril
-PROTOBUF_SUPPORTED := true
-
 # Sepolicy
 BOARD_SEPOLICY_DIRS += \
 	device/huawei/mozart/sepolicy

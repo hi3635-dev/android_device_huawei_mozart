@@ -37,6 +37,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     bt_vendor.conf
 
+# Carrier
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carrier=wifi-only
+
 # Debug
 ifeq ($(ENABLE_DEBUG),true)
 ADDITIONAL_DEFAULT_PROPERTIES += \

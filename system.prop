@@ -25,24 +25,6 @@ media.stagefright.use-awesome=false
 ro.am.reschedule_service=true
 ro.config.enable_rcc=true
 
-# Ril
-ro.config.dsds_mode=umts
-ro.multi.rild=false
-rild.libpath=/system/lib64/libbalong-ril.so
-ro.telephony.default_network=9
-rild.libargs=-m modem0
-persist.radio.modem.cap=899B4
-persist.dsds.enabled=false
-ro.config.hw_dsda=false
-rild.rild1_ready_to_start=false
-ro.telephony.ril_class=HwHisiRIL
-
-persist.radio.apm_sim_not_pwdn=1
-
-## single/dual SIM ?
-ro.config.attach_ip_type=IPV4V6
-ro.config.ipv4.mtu=1400
-
 # SDcardFS
 ro.sys.sdcardfs=true
 
