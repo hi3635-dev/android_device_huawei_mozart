@@ -13,7 +13,13 @@ ro.opengles.version=196608
 ro.config.mmu_en=1
 
 # Media
+persist.sys.sr_google_avc_enc=1
+persist.sys.google_avc_enc=0
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 media.stagefright.use-awesome=false
+persist.camera.cap_sup_back=3
+persist.camera.cap_sup_front=3
 
 # Performance
 ro.am.reschedule_service=true
