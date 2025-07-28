@@ -53,3 +53,10 @@ LOCAL_MODULE := libshim_ui
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := libshim_exif.cpp
+LOCAL_SHARED_LIBRARIES := libexif
+LOCAL_MODULE := libshim_exif
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
