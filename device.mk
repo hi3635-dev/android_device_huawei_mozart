@@ -174,6 +174,7 @@ TARGET_SCREEN_WIDTH := 1200
 
 # Shims
 PRODUCT_PACKAGES += \
+    libshim_aeabi \
     libshim_camera_algo \
     libshim_camera_metadata \
     libshim_exif \

@@ -119,6 +119,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.hi3635
 TARGET_LD_SHIM_LIBS := \
     /system/bin/glgps4752|libshim_gui.so \
     /system/bin/HwCamCfgSvr|libshim_memtrack.so \
+    /system/lib/libcamera_algo.so|libshim_aeabi.so \
     /system/lib/libcamera_algo.so|libshim_camera_algo.so \
     /system/lib/libcamera_algo.so|libshim_ui.so \
     /system/lib/libcamera_algo.so|libshim_memtrack.so \
