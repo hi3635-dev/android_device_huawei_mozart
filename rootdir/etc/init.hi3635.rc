@@ -937,6 +937,11 @@ on charger
     start hw_healthd
 
 # Start services
+service HwCamCfgSvr /system/bin/HwCamCfgSvr hi3635 MOZART
+    class main
+    user media
+    group audio camera inet net_bt net_bt_admin net_bw_acct mediadrm system
+
 service hw_healthd /sbin/hw_healthd -c
     class charger
     user root
