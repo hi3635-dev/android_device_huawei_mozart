@@ -35,3 +35,10 @@ LOCAL_SRC_FILES := libshim_fence.cpp
 LOCAL_MODULE := libshim_fence
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := libshim_camera_metadata.cpp
+LOCAL_SHARED_LIBRARIES := libcamera_client
+LOCAL_MODULE := libshim_camera_metadata
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
