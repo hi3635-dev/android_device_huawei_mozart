@@ -42,3 +42,14 @@ LOCAL_SHARED_LIBRARIES := libcamera_client
 LOCAL_MODULE := libshim_camera_metadata
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := \
+    ui/GraphicBufferAllocator.cpp \
+    ui/GraphicBuffer.cpp \
+    ui/GraphicBufferMapper.cpp
+LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware libui libutils libsync
+LOCAL_MODULE := libshim_ui
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include $(BUILD_SHARED_LIBRARY)

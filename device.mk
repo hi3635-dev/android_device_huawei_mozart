@@ -178,7 +178,8 @@ PRODUCT_PACKAGES += \
     libshim_fence \
     libshim_gui \
     libshim_log \
-    libshim_memtrack
+    libshim_memtrack \
+    libshim_ui
 
 # USB
 PRODUCT_PACKAGES += \

@@ -123,6 +123,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib64/hw/camera.hi3635.so|libshim_camera_metadata.so \
     /system/lib/hw/camera.hi3635.so|libshim_fence.so \
     /system/lib64/hw/camera.hi3635.so|libshim_fence.so \
+    /system/lib/hwcam/hwcam.hi3635.m.MOZART.so|libshim_ui.so \
     /system/vendor/lib64/sensorhub.hi3635.so|libshim_log.so
 
 # SELinux
